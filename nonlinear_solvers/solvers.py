@@ -10,7 +10,7 @@ class ConvergenceError(Exception):
 def newton_raphson(f, df, x_0, eps, max_its):
     """"""
     x = x_0
-    for x in range(max_its):
+    for _ in range(max_its):
         x = x - f(x) / df(x)
         if abs(f(x)) < eps:
             return x
@@ -23,7 +23,7 @@ def bisection(f, x_0, x_1, eps, max_its):
     if f(x_0) * f(x_1) >= 0:
         raise ValueError("Initial points must have opposite signs for bisection")
 
-    for x_star in range(max_its):
+    for _ in range(max_its):
         x_star = (x_0 + x_1) / 2
         if abs(f(x_star)) < eps:
             return x_star
