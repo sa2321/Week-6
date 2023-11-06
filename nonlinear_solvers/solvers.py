@@ -7,7 +7,7 @@ class ConvergenceError(Exception):
     pass
 
 
-def newton_raphson(f, df, x_0, eps=1.0e-5, max_its=20):
+def newton_raphson(f, df, x_0, eps, max_its):
     """"""
     x = x_0
      for x in range(max_its):
@@ -18,7 +18,7 @@ def newton_raphson(f, df, x_0, eps=1.0e-5, max_its=20):
     raise ConvergenceError("Newton-Raphson iteration did not converge")
     raise NotImplementedError
 
-def bisection(f, x_0, x_1, eps=1.0e-5, max_its=20):
+def bisection(f, x_0, x_1, eps, max_its):
     """"""
     if f(x_0) * f(x_1) >= 0:
         raise ValueError("Initial points must have opposite signs for bisection")
