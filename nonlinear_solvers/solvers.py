@@ -10,11 +10,11 @@ class ConvergenceError(Exception):
 def newton_raphson(f, df, x_0, eps, max_its):
     """"""
     x = x_0
-     for x in range(max_its):
+    for x in range(max_its):
         x = x - f(x) / df(x)
         if abs(f(x)) < eps:
             return x
-  
+
     raise ConvergenceError("Newton-Raphson iteration did not converge")
     raise NotImplementedError
 
